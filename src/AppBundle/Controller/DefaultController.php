@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 class DefaultController extends Controller {
 
     /**
-     * @Route("/", name="homepage")
+     * @Route("/", name="home")
      */
     public function indexAction() {
         // replace this example code with whatever you need
@@ -75,6 +75,23 @@ class DefaultController extends Controller {
         return $this->render("default/addUser.html.twig", array(
             "formulaire"=> $this->createForm(UtilisateurType::class, new Utilisateur())->createView()
          )) ;
+    }
+    
+    /**
+     * @Route("/loginView/new/valid",name="valid")
+     */
+    public function validNewUser(Request $request) {
+        
+      $user = new Utilisateur();
+        
+         $f = $this->createForm(UtilisateurType::class,$user);
+         $f->handleRequest($request);
+         $em = $this->getDoctrine()->getManager();
+         $em->persist($user);
+         $em->flush();
+         
+          return $this->redirect($this->generateUrl('home'));
+            
     }
   }
 

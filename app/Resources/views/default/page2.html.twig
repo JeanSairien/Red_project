@@ -3,7 +3,7 @@
 {% block body %}
     
     <p>la securité</p>
-    {{parent()}}
+    
 {% endblock %}
 
 {% block stylesheets %}
@@ -16,4 +16,26 @@
     }
 </style>
 {% endblock %}
-{# empty Twig template #}
+
+{% block section %} 
+                <section>
+                <div class="col-lg-12">
+                    <div class="col-lg-6">
+                        <p> Voici les entreprises presentes au meetup de la rentré Rennes Js</p>
+                    </div>
+                    <div class="col-lg-6">
+                       <p> Les News </p>
+                            
+
+                    </div>                  
+
+
+
+                </div>        
+
+
+
+            </section>
+
+
+            {% endblock %}

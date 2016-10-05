@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Utilisateur
@@ -10,11 +11,13 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="utilisateur")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UtilisateurRepository")
  */
-class Utilisateur
+class Utilisateur implements UserInterface 
 {
     
+    
     function __construct() {
-        $this->privileges = array("standard");
+        $this->privilege = array('standard');
+        
         
     }
 
@@ -175,4 +178,37 @@ class Utilisateur
     {
         return $this->privilege;
     }
+    
+    
+    /**
+     * Get Username
+     *
+     * @return string 
+     */
+    public function getUserName()
+    {
+        return $this->nom;
+        
+    }
+
+    public function eraseCredentials() {
+        
+    }
+
+    public function getPassword() 
+            {
+         return $this->motdepass;
+    }
+    
+
+    public function getRoles() {
+        
+        return $this->privilege ;
+        
+    }
+
+    public function getSalt() {
+        
+    }
+
 }

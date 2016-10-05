@@ -18,7 +18,7 @@ class UtilisateurType extends AbstractType
             ->add('nom')
             ->add('email')
             ->add('motdepass')
-            ->add('privilege')
+            
         ;
     }
     
