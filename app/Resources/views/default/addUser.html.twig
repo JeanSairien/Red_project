@@ -1,0 +1,10 @@
+{% extends "base.html.twig"%}
+{% block tilte %}
+    {{parent()}}
+    page 2 
+    {% endblock %}
+    {% block body %}
+        Ajout des utilisateurs 
+        {{form_start(formulaire)}}
+        {{form_end(formulaire)}}
+        {% endblock %}
