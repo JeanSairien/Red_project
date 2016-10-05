@@ -10,11 +10,11 @@ ce projet a pour but de s'entrainer sur le framework
 dans ce projet je reprend la synthese du derniers meetup pour le presenter au personne qui n'y etait pas 
 
 
-#installer composer 
+##installer composer 
 
-#cloner le depot dans votre local host 
+##cloner le depot dans votre local host 
 
-#placer vous dans le dossier que vous venez de cloner et entrer la commande suivant : composer install 
+##placer vous dans le dossier que vous venez de cloner et entrer la commande suivant : composer install 
 
 
 ceci installera les elements nessecaires au bon fonctionnement du site 
